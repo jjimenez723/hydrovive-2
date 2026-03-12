@@ -4,6 +4,7 @@ test-results/
 audit-desktop.png
 audit-mobile.png
 context.md
+playwright-audit.spec.js
 
 .DS_Store
 Thumbs.db
