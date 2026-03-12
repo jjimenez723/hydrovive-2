@@ -1,0 +1,9 @@
+node_modules/
+test-results/
+
+audit-desktop.png
+audit-mobile.png
+context.md
+
+.DS_Store
+Thumbs.db
