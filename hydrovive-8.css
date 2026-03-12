@@ -367,10 +367,36 @@
     display: none;
     width: 46px;
     height: 46px;
+    padding: 0;
     border: 1px solid rgba(16, 38, 58, 0.12);
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.8);
     color: var(--ink);
+  }
+
+  .nav-toggle-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .nav-toggle-bar + .nav-toggle-bar {
+    margin-top: 4px;
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   .hero {
@@ -2001,6 +2027,7 @@
     .founder-visual {
       min-height: auto;
       display: grid;
+      grid-template-columns: 1fr;
       gap: 18px;
     }
 
@@ -2060,8 +2087,10 @@
     }
 
     .nav-toggle {
-      display: inline-grid;
-      place-items: center;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .header-actions .button.primary {
@@ -2146,6 +2175,10 @@
     .membership-grid,
     .process-grid,
     .footer-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .founder-visual {
       grid-template-columns: 1fr;
     }
 
